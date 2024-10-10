@@ -26,5 +26,10 @@ namespace DuszaFogadas
             JatekLetrehozasa window = new();
             window.Show();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
