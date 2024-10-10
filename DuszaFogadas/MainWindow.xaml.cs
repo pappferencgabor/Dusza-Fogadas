@@ -28,11 +28,11 @@ namespace DuszaFogadas
             connection.Open();
         }
 
-        private void btnTeszt_Click(object sender, RoutedEventArgs e)
-        {
-            JatekLetrehozasa window = new();
-            window.Show();
-        }
+        //private void btnTeszt_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Regisztracio window = new();
+        //    window.Show();
+        //}
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
