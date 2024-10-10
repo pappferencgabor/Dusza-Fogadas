@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DuszaFogadas.Helpers;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +28,20 @@ namespace DuszaFogadas
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-
+            if (txtPassword.Password == txtPasswordAgain.Password)
+            {
+                MySqlConnection conn = GetMysqlConnection.getMysqlConnection();
+                conn.Open();
+                MySqlCommand com = new MySqlCommand("INSERT INTO felhasznalok (nev, jelszo, pontok, szerepkor) VALUES (@nev, @jelszo, @pontok, @szerepkor)", conn);
+                com.Parameters.AddWithValue("@nev", txtUsername.Text);
+                com.Parameters.AddWithValue("@jelszo", PasswordHelper.HashPassword(txtPassword.Password));
+                com.Parameters.AddWithValue("@pontok", 0);
+                com.Parameters.AddWithValue("@szerepkor", "F");
+                com.ExecuteNonQuery();
+                conn.Close();
+                this.Close();
+            }
+            
         }
     }
 }

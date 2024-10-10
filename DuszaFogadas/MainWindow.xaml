@@ -33,7 +33,7 @@ on/blend/2008"
 
             <Label Content="Jelszó"
                    FontSize="30" />
-            <TextBox x:Name="txtPassword"
+            <PasswordBox x:Name="txtPassword"
                      Width="300"
                      Height="40"
                      FontSize="24"
