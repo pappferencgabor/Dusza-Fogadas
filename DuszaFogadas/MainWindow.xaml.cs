@@ -36,7 +36,20 @@ namespace DuszaFogadas
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            MySqlConnection conn = GetMysqlConnection.getMysqlConnection();
+            conn.Open();
+            MySqlCommand com = new MySqlCommand("SELECT * FROM felhasznalok where nev = @nev");
+            com.Parameters.AddWithValue("@nev", txtUsername.Text);
+            com.Parameters.AddWithValue("@jelszo", PasswordHelper.HashPassword(txtPassword.Text));
+            MySqlDataReader reader = com.ExecuteReader();
+            conn.Close();
+            if (reader.HasRows)
+            {
+                MessageBox.Show("Succesful login");
+            } else
+            {
+                MessageBox.Show("Login failed");
+            }
         }
     }
 }
