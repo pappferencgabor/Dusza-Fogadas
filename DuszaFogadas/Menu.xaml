@@ -24,7 +24,8 @@
                     Height="50"
                     Content="Játék létrehozása"
                     FontSize="35"
-                    Margin="30" />
+                    Margin="30" 
+                    Click="btn_CreateGame"/>
 
             <Button Width="350"
                     Height="50"

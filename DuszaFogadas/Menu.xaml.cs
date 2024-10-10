@@ -20,9 +20,17 @@ namespace DuszaFogadas
     /// </summary>
     public partial class Menu : Window
     {
+        User usr;
         public Menu(User user)
         {
             InitializeComponent();
+            usr = user;
+        }
+
+        private void btn_CreateGame(object sender, RoutedEventArgs e)
+        {
+            JatekLetrehozasa createGame = new JatekLetrehozasa(usr);
+            createGame.Show();
         }
     }
 }
