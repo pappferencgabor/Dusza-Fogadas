@@ -49,13 +49,13 @@ on/blend/2008"
                     Click="btnLogin_Click"/>
         </StackPanel>
 
-        <!--<Button x:Name="btnTeszt"
+        <Button x:Name="btnTeszt"
                 Width="150"
                 Height="30"
                 FontSize="24"
                 VerticalAlignment="Bottom"
                 Content="Teszt ablak"
                 Margin="50"
-                Click="btnTeszt_Click" />-->
+                Click="btnTeszt_Click" />
     </Grid>
 </Window>
