@@ -16,7 +16,6 @@ CREATE TABLE jatekok (
 
 CREATE TABLE alanyok (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    felhasznaloid INT,
     nev VARCHAR(128),
     jatekId INT
 );
@@ -24,7 +23,7 @@ CREATE TABLE alanyok (
 CREATE TABLE esemenyek (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nev INT,
-    alanyId INT
+    jatekId INT
 );
 
 CREATE TABLE fogadasok (
@@ -50,7 +49,6 @@ ALTER TABLE jatekok
     ADD FOREIGN KEY (szervezoid) REFERENCES felhasznalok(id);
 
 ALTER TABLE alanyok 
-    ADD FOREIGN KEY (felhasznaloid) REFERENCES felhasznalok(id),
     ADD FOREIGN KEY (jatekId) REFERENCES jatekok(id);
 
 ALTER TABLE fogadasok 
