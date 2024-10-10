@@ -22,8 +22,6 @@ namespace DuszaFogadas
         public MainWindow()
         {
             InitializeComponent();
-            Regisztracio window = new();
-            window.Show();
         }
 
         private void btnTeszt_Click(object sender, RoutedEventArgs e)
@@ -38,15 +36,17 @@ namespace DuszaFogadas
             conn.Open();
             MySqlCommand com = new MySqlCommand("SELECT * FROM felhasznalok where nev = @nev", conn);
             com.Parameters.AddWithValue("@nev", txtUsername.Text);
-            com.Parameters.AddWithValue("@jelszo", PasswordHelper.HashPassword(txtPassword.Password));
             MySqlDataReader reader = com.ExecuteReader();
-            conn.Close();
-            if (reader.HasRows)
+            reader.Read();
+            if (PasswordHelper.VerifyPassword(reader.GetString("jelszo"), txtPassword.Password))
             {
-                MessageBox.Show("Succesful login");
-            } else
+                MessageBox.Show("Succesful login!");
+                conn.Close();
+            }
+            else
             {
                 MessageBox.Show("Login failed");
+                conn.Close();
             }
         }
     }
