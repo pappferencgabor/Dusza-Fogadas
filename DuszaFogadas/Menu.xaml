@@ -40,7 +40,7 @@
 
             <Button Width="350"
                     Height="50"
-                    Content="Felhasznűlók kezelése"
+                    Content="Felhasználók kezelése"
                     FontSize="35"
                     Margin="30" />
 
