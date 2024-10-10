@@ -52,11 +52,12 @@ namespace DuszaFogadas
                         reader.GetInt32(0),
                         reader.GetString(1),
                         reader.GetInt32(3),
-                        reader.GetString(4)
+                        UserEnum.ConvertEnum(reader.GetString(4))
                     );
                     users.Add(user);
                 }
             }
+            conn.Close();
         }
 
         private void dgData_SelectionChanged(object sender, SelectionChangedEventArgs e)

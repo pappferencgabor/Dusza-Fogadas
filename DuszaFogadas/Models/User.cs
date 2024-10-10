@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DuszaFogadas.Models.UserEnum;
 
 namespace DuszaFogadas.Models
 {
-    internal class User
+    public class User
     {
-        public User(int id, string name, int points, string role)
+        public User(int id, string name, int points, UserRole role)
         {
             Id = id;
             Name = name;
@@ -19,6 +20,6 @@ namespace DuszaFogadas.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int Points { get; set; }
-        public string Role { get; set; }
+        public UserRole Role { get; set; }
     }
 }

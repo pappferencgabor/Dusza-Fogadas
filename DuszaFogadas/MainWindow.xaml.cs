@@ -11,6 +11,9 @@ using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
 using DuszaFogadas.Helpers;
+using DuszaFogadas.Models;
+using System.Data;
+using static DuszaFogadas.Models.UserEnum;
 
 namespace DuszaFogadas
 {
@@ -39,9 +42,12 @@ namespace DuszaFogadas
             MySqlDataReader reader = com.ExecuteReader();
             reader.Read();
             if (PasswordHelper.VerifyPassword(reader.GetString("jelszo"), txtPassword.Password))
-            {
-                MessageBox.Show("Succesful login!");
+            { 
+                User usr = new User(reader.GetInt32("id"), reader.GetString("nev"), reader.GetInt32("pontok"), ConvertEnum(reader.GetString("szerepkor")));
                 conn.Close();
+                Menu menu = new Menu(usr);
+                menu.Show();
+                this.Close();
             }
             else
             {

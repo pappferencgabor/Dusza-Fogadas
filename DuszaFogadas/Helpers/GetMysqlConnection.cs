@@ -13,7 +13,7 @@ namespace DuszaFogadas.Helpers
                                   "port=3306;" +
                                   "username=root;" +
                                   "password=;" +
-                                  "database=duszafogadas;";
+                                  "database=betting;";
 
         public static MySqlConnection getMysqlConnection()
         {

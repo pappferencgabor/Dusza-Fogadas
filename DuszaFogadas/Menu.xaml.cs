@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuszaFogadas.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace DuszaFogadas
     /// </summary>
     public partial class Menu : Window
     {
-        public Menu()
+        public Menu(User user)
         {
             InitializeComponent();
         }
