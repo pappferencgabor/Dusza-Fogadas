@@ -31,7 +31,7 @@
 
             <Label Content="Jelszó"
                    FontSize="30" />
-            <TextBox x:Name="txtPassword"
+            <PasswordBox x:Name="txtPassword"
                      Width="300"
                      Height="40"
                      FontSize="24"
@@ -40,12 +40,13 @@
             
             <Label Content="Jelszó ismét"
                    FontSize="30" />
-            <TextBox x:Name="txtPasswordAgain"
+            <PasswordBox x:Name="txtPasswordAgain"
                      Width="300"
                      Height="40"
                      FontSize="24"
                      VerticalContentAlignment="Center"
-                     Margin="0 0 0 100" />
+                     Margin="0 0 0 100" 
+                     />
 
 
             <Button x:Name="btnRegister"
