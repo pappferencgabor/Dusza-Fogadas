@@ -8,6 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+
+using DuszaFogadas.Helpers;
 
 namespace DuszaFogadas
 {
@@ -19,12 +22,16 @@ namespace DuszaFogadas
         public MainWindow()
         {
             InitializeComponent();
+
+            MySqlConnection connection = GetMysqlConnection.getMysqlConnection();
+
+            connection.Open();
         }
 
-        private void btnTeszt_Click(object sender, RoutedEventArgs e)
-        {
-            JatekLetrehozasa window = new();
-            window.Show();
-        }
+        //private void btnTeszt_Click(object sender, RoutedEventArgs e)
+        //{
+        //    JatekLetrehozasa window = new();
+        //    window.Show();
+        //}
     }
 }
