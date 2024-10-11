@@ -77,13 +77,14 @@ namespace DuszaFogadas
             {
                 MySqlConnection conn = GetMysqlConnection.getMysqlConnection();
                 conn.Open();
-                MySqlCommand com = new MySqlCommand("SELECT * FROM jatekok WHERE nev = (@nev)");
+                MySqlCommand com = new MySqlCommand("SELECT * FROM jatekok WHERE nev = (@nev)", conn);
                 com.Parameters.AddWithValue("@nev", txtGamename.Text);
                 MySqlDataReader reader = com.ExecuteReader();
                 if (reader.HasRows)
                 {
                     throw new Exception("GameNameExists");
                 }
+                reader.Close();
                 com = new MySqlCommand("INSERT INTO jatekok (szervezoid, nev, alanyokszama, status) VALUES (@szervezoID, @nev, @alanyokSzama, @status)", conn);
                 com.Parameters.AddWithValue("@szervezoID", usr.Id);
                 com.Parameters.AddWithValue("@nev", txtGamename.Text);
@@ -91,15 +92,17 @@ namespace DuszaFogadas
                 com.Parameters.AddWithValue("@status", "Aktiv");
                 com.ExecuteNonQuery();
 
-                com = new MySqlCommand("SELECT id FROM jatekok WHERE nev = (@nev)");
+                com = new MySqlCommand("SELECT id FROM jatekok WHERE nev = (@nev)", conn);
                 com.Parameters.AddWithValue("@nev", txtGamename.Text);
-                reader = com.ExecuteReader();;
+                reader = com.ExecuteReader();
+                reader.Read();
                 int lastGameID = reader.GetInt32("id");
+                reader.Close();
 
                 //I am fairly sure there is a nicer way to do this, but as of now this will do.
                 for (int i = 0; i < lbParticipants.Items.Count; i++)
                 {
-                    com = new MySqlCommand("INSERT INTO alanyok (nev, jatekId) VALUES (@nev, @jatekId)");
+                    com = new MySqlCommand("INSERT INTO alanyok (nev, jatekId) VALUES (@nev, @jatekId)", conn);
                     com.Parameters.AddWithValue("@nev", lbParticipants.Items[i]);
                     com.Parameters.AddWithValue("@jatekId", lastGameID);
                     com.ExecuteNonQuery();
@@ -107,7 +110,7 @@ namespace DuszaFogadas
 
                 for (int i = 0; i < lbEvents.Items.Count; i++)
                 {
-                    com = new MySqlCommand("INSERT INTO esemenyek (nev, jatekId) VALUES (@nev, @jatekId)");
+                    com = new MySqlCommand("INSERT INTO esemenyek (nev, jatekId) VALUES (@nev, @jatekId)", conn);
                     com.Parameters.AddWithValue("@nev", lbEvents.Items[i]);
                     com.Parameters.AddWithValue("@jatekId", lastGameID);
                     com.ExecuteNonQuery();
