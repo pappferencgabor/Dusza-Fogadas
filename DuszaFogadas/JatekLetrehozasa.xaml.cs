@@ -82,7 +82,7 @@ namespace DuszaFogadas
                     throw new Exception("GameNameExists");
                 }
                 reader.Close();
-                com = new MySqlCommand("INSERT INTO jatekok (szervezoid, nev, alanyokszama, status) VALUES (@szervezoNev, @nev, @alanyokSzama, @status)", conn);
+                com = new MySqlCommand("INSERT INTO jatekok (szervezonev, nev, alanyokszama, status) VALUES (@szervezoNev, @nev, @alanyokSzama, @status)", conn);
                 com.Parameters.AddWithValue("@szervezoNev", txtHostname.Text);
                 com.Parameters.AddWithValue("@nev", txtGamename.Text);
                 com.Parameters.AddWithValue("@alanyokSzama", lbParticipants.Items.Count);

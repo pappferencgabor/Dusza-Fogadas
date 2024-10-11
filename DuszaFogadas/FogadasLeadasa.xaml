@@ -25,7 +25,12 @@
                       Height="40"
                       FontSize="24"
                       VerticalContentAlignment="Center"
-                      Margin="0 0 0 10" />
+                      Margin="0 0 0 10" 
+                      ItemsSource ="{Binding Path=Game}"
+                      DisplayMemberPath="GameName"
+                      SelectedValuePath="id"
+                      x:Name="cbGame"
+                      SelectionChanged="cbGame_SelectionChanged"/>
 
 
             <Label Content="Alany kiválasztása"
@@ -34,7 +39,9 @@
                       Height="40"
                       FontSize="24"
                       VerticalContentAlignment="Center"
-                      Margin="0 0 0 10" />
+                      Margin="0 0 0 10" 
+                      ItemsSource="{Binding Items}"
+                      x:Name="cbParticipant"/>
 
 
             <Label Content="Esemény kiválasztása"
@@ -43,7 +50,9 @@
                       Height="40"
                       FontSize="24"
                       VerticalContentAlignment="Center"
-                      Margin="0 0 0 10" />
+                      Margin="0 0 0 10" 
+                      ItemsSource="{Binding Items}"
+                      x:Name="cbEvent"/>
 
 
             <Label Content="Tipp"
@@ -63,14 +72,17 @@
                      Height="40"
                      FontSize="24"
                      VerticalContentAlignment="Center"
-                     Margin="0 0 0 35"  />
+                     Margin="0 0 0 35" 
+                     TextChanged="txtBet_TextChanged" 
+                     PreviewTextInput="txtBet_PreviewTextInput"/>
 
 
             <Button x:Name="btnSendGuess"
                     Width="250"
                     Height="40"
                     FontSize="24"
-                    Content="Tipp elküldése" />
+                    Content="Tipp elküldése"
+                    Click="btnSendGuess_Click"/>
         </StackPanel>
     </Grid>
 </Window>

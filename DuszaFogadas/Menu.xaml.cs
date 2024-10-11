@@ -44,10 +44,10 @@ namespace DuszaFogadas
             JatekLetrehozasa createGame = new JatekLetrehozasa();
             createGame.Show();
         }
-
+        
         private void btnSendBet_Click(object sender, RoutedEventArgs e)
         {
-            FogadasLeadasa sendBet = new FogadasLeadasa();
+            FogadasLeadasa sendBet = new FogadasLeadasa(usr);
             sendBet.Show();
         }
 
