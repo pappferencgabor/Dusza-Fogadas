@@ -35,7 +35,7 @@ namespace DuszaFogadas
 
         private void btn_CreateBet(object sender, RoutedEventArgs e)
         {
-            FogadasLeadasa cb = new FogadasLeadasa();
+            FogadasLeadasa cb = new FogadasLeadasa(usr);
             cb.Show();
         }
     }

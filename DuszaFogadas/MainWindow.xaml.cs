@@ -55,15 +55,22 @@ namespace DuszaFogadas
             MySqlCommand com = new MySqlCommand("SELECT * FROM felhasznalok where nev = @nev", conn);
             com.Parameters.AddWithValue("@nev", txtUsername.Text);
             MySqlDataReader reader = com.ExecuteReader();
-            reader.Read();
-            if (PasswordHelper.VerifyPassword(reader.GetString("jelszo"), txtPassword.Password))
-            { 
-                User usr = new User(reader.GetInt32("id"), reader.GetString("nev"), reader.GetInt32("pontok"), ConvertEnum(reader.GetString("szerepkor")));
-                conn.Close();
-                reader.Close();
-                Menu menu = new Menu(usr);
-                menu.Show();
-                this.Close();
+            if (reader.Read())
+            {
+                if (PasswordHelper.VerifyPassword(reader.GetString("jelszo"), txtPassword.Password))
+                {
+                    User usr = new User(reader.GetInt32("id"), reader.GetString("nev"), reader.GetInt32("pontok"), ConvertEnum(reader.GetString("szerepkor")));
+                    conn.Close();
+                    reader.Close();
+                    Menu menu = new Menu(usr);
+                    menu.Show();
+                    this.Close();
+                } else
+                {
+                    MessageBox.Show("Login failed");
+                    conn.Close();
+                }
+
             }
             else
             {

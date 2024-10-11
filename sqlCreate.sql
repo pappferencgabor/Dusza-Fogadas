@@ -32,7 +32,7 @@ CREATE TABLE fogadasok (
     jatekId INT,
     alanyId INT,
     esemenyId INT,
-    tet INT,
+    tet VARCHAR(255),
     fogadasErteke VARCHAR(128)
 );
 
