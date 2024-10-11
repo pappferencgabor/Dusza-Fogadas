@@ -133,6 +133,7 @@
                     Value="#CAF0F8" />
             <Setter Property="Foreground"
                     Value="#012A4A" />
+            
         </Style>
 
 

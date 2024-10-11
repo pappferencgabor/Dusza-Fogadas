@@ -20,37 +20,44 @@
                     HorizontalAlignment="Center"
                     Margin="0 100 0 0">
 
-            <Button Width="350"
+            <Button x:Name="btnCreateGame"
+                    Width="350"
                     Height="50"
                     Content="Játék létrehozása"
                     FontSize="35"
-                    Margin="30" 
-                    Click="btn_CreateGame"/>
+                    Margin="30"
+                    Click="btnCreateGame_Click"/>
 
-            <Button Width="350"
+            <Button x:Name="btnSendBet"
+                    Width="350"
                     Height="50"
                     Content="Fogadás leadása"
                     FontSize="35"
                     Margin="30"
-                    Click="btn_CreateBet"/>
+                    Click="btnSendBet_Click" />
 
-            <Button Width="350"
+            <Button x:Name="btnCloseGame"
+                    Width="350"
                     Height="50"
                     Content="Játék lezárása"
                     FontSize="35"
                     Margin="30" />
 
-            <Button Width="350"
+            <Button x:Name="btnManageUsers"
+                    Width="350"
                     Height="50"
                     Content="Felhasználók kezelése"
                     FontSize="35"
-                    Margin="30" />
+                    Margin="30"
+                    Click="btnManageUsers_Click" />
 
-            <Button Width="350"
+            <Button x:Name="btnExit"
+                    Width="350"
                     Height="50"
                     Content="Kilépés"
                     FontSize="35"
-                    Margin="30"/>
+                    Margin="30"
+                    Click="btnExit_Click" />
         </StackPanel>
     </Grid>
 </Window>

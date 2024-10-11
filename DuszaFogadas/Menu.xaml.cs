@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DuszaFogadas.Models;
 
 namespace DuszaFogadas
 {
@@ -25,18 +26,42 @@ namespace DuszaFogadas
         {
             InitializeComponent();
             usr = user;
+
+            if (usr.Role.ToString() == "F")
+            {
+                btnCreateGame.Visibility = Visibility.Collapsed;
+                btnCloseGame.Visibility = Visibility.Collapsed;
+                btnManageUsers.Visibility = Visibility.Collapsed;
+            }
+            if (usr.Role.ToString() == "SZ")
+            {
+                btnManageUsers.Visibility = Visibility.Collapsed;
+            }
         }
 
-        private void btn_CreateGame(object sender, RoutedEventArgs e)
+        private void btnCreateGame_Click(object sender, RoutedEventArgs e)
         {
             JatekLetrehozasa createGame = new JatekLetrehozasa();
             createGame.Show();
         }
-
-        private void btn_CreateBet(object sender, RoutedEventArgs e)
+        
+        private void btnSendBet_Click(object sender, RoutedEventArgs e)
         {
-            FogadasLeadasa cb = new FogadasLeadasa(usr);
-            cb.Show();
+            FogadasLeadasa sendBet = new FogadasLeadasa(usr);
+            sendBet.Show();
+        }
+
+        // TODO close game
+
+        private void btnManageUsers_Click(object sender, RoutedEventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
