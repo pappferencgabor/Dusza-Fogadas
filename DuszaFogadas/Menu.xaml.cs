@@ -32,5 +32,11 @@ namespace DuszaFogadas
             JatekLetrehozasa createGame = new JatekLetrehozasa();
             createGame.Show();
         }
+
+        private void btn_CreateBet(object sender, RoutedEventArgs e)
+        {
+            FogadasLeadasa cb = new FogadasLeadasa();
+            cb.Show();
+        }
     }
 }
