@@ -22,7 +22,7 @@ CREATE TABLE alanyok (
 
 CREATE TABLE esemenyek (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nev INT,
+    nev VARCHAR(128),
     jatekId INT
 );
 
