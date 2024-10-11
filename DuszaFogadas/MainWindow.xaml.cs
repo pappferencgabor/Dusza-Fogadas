@@ -22,9 +22,24 @@ namespace DuszaFogadas
     /// </summary>
     public partial class MainWindow : Window
     {
+        MySqlConnection conn;
         public MainWindow()
         {
             InitializeComponent();
+            conn = GetMysqlConnection.getMysqlConnection();
+            conn.Open();
+            MySqlCommand com = new MySqlCommand("SELECT COUNT(*) from felhasznalok", conn);
+            MySqlDataReader reader = com.ExecuteReader();
+            reader.Read();
+            if (reader.GetInt32(0) == 0)
+            {
+                Regisztracio reg = new Regisztracio();
+                reg.Show();
+                reader.Close();
+            }
+            conn.Close();
+            
+           
         }
 
         private void btnTeszt_Click(object sender, RoutedEventArgs e)
@@ -45,6 +60,7 @@ namespace DuszaFogadas
             { 
                 User usr = new User(reader.GetInt32("id"), reader.GetString("nev"), reader.GetInt32("pontok"), ConvertEnum(reader.GetString("szerepkor")));
                 conn.Close();
+                reader.Close();
                 Menu menu = new Menu(usr);
                 menu.Show();
                 this.Close();
