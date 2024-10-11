@@ -45,9 +45,6 @@ CREATE TABLE eredmenyek (
     szorzo FLOAT
 );
 
-ALTER TABLE jatekok 
-    ADD FOREIGN KEY (szervezoid) REFERENCES felhasznalok(id);
-
 ALTER TABLE alanyok 
     ADD FOREIGN KEY (jatekId) REFERENCES jatekok(id);
 
