@@ -36,7 +36,7 @@ namespace DuszaFogadas
                 com.Parameters.AddWithValue("@nev", txtUsername.Text);
                 com.Parameters.AddWithValue("@jelszo", PasswordHelper.HashPassword(txtPassword.Password));
                 com.Parameters.AddWithValue("@pontok", 0);
-                com.Parameters.AddWithValue("@szerepkor", "A");
+                com.Parameters.AddWithValue("@szerepkor", "F");
                 com.ExecuteNonQuery();
                 conn.Close();
                 this.Close();
