@@ -34,7 +34,9 @@
                   Grid.RowSpan="2"
                   FontSize="24"
                   Margin="10"
-                  SelectionChanged="dgData_SelectionChanged" />
+                  SelectionChanged="dgData_SelectionChanged"
+                  ColumnWidth="*"
+                  IsReadOnly="True"/>
 
         <StackPanel Grid.Row="1"
                     Grid.Column="3"
@@ -52,6 +54,17 @@
                      VerticalContentAlignment="Center" />
 
 
+            <Label Content="Pontszám:"
+                   Width="255"
+                   FontSize="24" />
+            <TextBox x:Name="txtPoints"
+                     Width="250"
+                     Height="40"
+                     FontSize="24"
+                     Margin="5"
+                     VerticalContentAlignment="Center" />
+
+
             <Label Content="Szerepkör:"
                    Width="255"
                    FontSize="24" />
@@ -61,8 +74,9 @@
                       FontSize="24"
                       VerticalContentAlignment="Center"
                       Margin="0 0 0 50">
-                <ComboBoxItem Content="Felhasználó" />
+                <ComboBoxItem Content="Admin" />
                 <ComboBoxItem Content="Szervező" />
+                <ComboBoxItem Content="Felhasználó" />
             </ComboBox>
 
             <Button x:Name="btnNewUser"
@@ -70,21 +84,24 @@
                     Height="40"
                     FontSize="24"
                     Content="Felhasználó hozzáadása"
-                    Margin="10" />
+                    Margin="10"
+                    Click="btnNewUser_Click" />
 
             <Button x:Name="btnModifyUser"
                     Width="250"
                     Height="40"
                     FontSize="24"
                     Content="Felhasználó módosítása"
-                    Margin="10" />
+                    Margin="10"
+                    Click="btnModifyUser_Click" />
 
             <Button x:Name="btnDeleteUser"
                     Width="250"
                     Height="40"
                     FontSize="24"
                     Content="Felhasználó törlése"
-                    Margin="10" />
+                    Margin="10"
+                    Click="btnDeleteUser_Click" />
         </StackPanel>
     </Grid>
 </Window>
