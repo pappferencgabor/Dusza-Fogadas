@@ -29,7 +29,7 @@ namespace DuszaFogadas
 
         private void btn_CreateGame(object sender, RoutedEventArgs e)
         {
-            JatekLetrehozasa createGame = new JatekLetrehozasa(usr);
+            JatekLetrehozasa createGame = new JatekLetrehozasa();
             createGame.Show();
         }
     }

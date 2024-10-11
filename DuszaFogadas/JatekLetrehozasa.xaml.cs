@@ -24,12 +24,9 @@ namespace DuszaFogadas
     /// </summary>
     public partial class JatekLetrehozasa : Window
     {
-        User usr;
-        public JatekLetrehozasa(User _usr)
+        public JatekLetrehozasa()
         {
             InitializeComponent();
-            usr = _usr;
-            txtHostname.Text = usr.Name;
         }
 
         private void btnAddNewParticipant_Click(object sender, RoutedEventArgs e)
@@ -85,8 +82,8 @@ namespace DuszaFogadas
                     throw new Exception("GameNameExists");
                 }
                 reader.Close();
-                com = new MySqlCommand("INSERT INTO jatekok (szervezoid, nev, alanyokszama, status) VALUES (@szervezoID, @nev, @alanyokSzama, @status)", conn);
-                com.Parameters.AddWithValue("@szervezoID", usr.Id);
+                com = new MySqlCommand("INSERT INTO jatekok (szervezoid, nev, alanyokszama, status) VALUES (@szervezoNev, @nev, @alanyokSzama, @status)", conn);
+                com.Parameters.AddWithValue("@szervezoNev", txtHostname.Text);
                 com.Parameters.AddWithValue("@nev", txtGamename.Text);
                 com.Parameters.AddWithValue("@alanyokSzama", lbParticipants.Items.Count);
                 com.Parameters.AddWithValue("@status", "Aktiv");

@@ -40,8 +40,7 @@
                      Width="300"
                      Height="40"
                      FontSize="24"
-                     VerticalContentAlignment="Center" 
-                     IsReadOnly="True"/>
+                     VerticalContentAlignment="Center" />
         </StackPanel>
 
 
