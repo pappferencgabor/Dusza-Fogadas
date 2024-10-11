@@ -8,7 +8,7 @@ CREATE TABLE felhasznalok (
 
 CREATE TABLE jatekok (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    szervezoid INT,
+    szervezoNev VARCHAR(128),
     nev VARCHAR(255),
     alanyokSzama INT,
     status VARCHAR(255)
