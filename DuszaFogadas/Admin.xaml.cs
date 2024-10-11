@@ -83,40 +83,60 @@ namespace DuszaFogadas
 
         private void btnModifyUser_Click(object sender, RoutedEventArgs e)
         {
-            var selectedUser = dgData.SelectedItem as User;
+            var selectedIndex = dgData.SelectedIndex;
 
-            users[dgData.SelectedIndex].Name = txtUsername.Text;
-            users[dgData.SelectedIndex].Points = Convert.ToInt32(txtPoints.Text);
-            users[dgData.SelectedIndex].Role = UserEnum.ConvertEnum(convertRole(cboUserRole.Text.ToString()));
+            if (selectedIndex >= 0)
+            {
+                var selectedUser = dgData.SelectedItem as User;
 
-            dgData.Items.Refresh();
+                users[dgData.SelectedIndex].Name = txtUsername.Text;
+                users[dgData.SelectedIndex].Points = Convert.ToInt32(txtPoints.Text);
+                users[dgData.SelectedIndex].Role = UserEnum.ConvertEnum(convertRole(cboUserRole.Text.ToString()));
 
-            MySqlConnection conn = GetMysqlConnection.getMysqlConnection();
-            conn.Open();
-            MySqlCommand com = new MySqlCommand($"UPDATE felhasznalok SET nev=@nev, pontok=@pontok, szerepkor=@szerepkor WHERE id=@id", conn);
-            com.Parameters.AddWithValue("@nev", txtUsername.Text);
-            com.Parameters.AddWithValue("@pontok", int.Parse(txtPoints.Text));
-            com.Parameters.AddWithValue("@szerepkor", convertRole(cboUserRole.Text.ToString()));
-            com.Parameters.AddWithValue("@id", selectedUser.Id);
-            com.ExecuteNonQuery();
-            conn.Close();
+                dgData.Items.Refresh();
 
-            clearTextboxes();
+                MySqlConnection conn = GetMysqlConnection.getMysqlConnection();
+                conn.Open();
+                MySqlCommand com = new MySqlCommand($"UPDATE felhasznalok SET nev=@nev, pontok=@pontok, szerepkor=@szerepkor WHERE id=@id", conn);
+                com.Parameters.AddWithValue("@nev", txtUsername.Text);
+                com.Parameters.AddWithValue("@pontok", int.Parse(txtPoints.Text));
+                com.Parameters.AddWithValue("@szerepkor", convertRole(cboUserRole.Text.ToString()));
+                com.Parameters.AddWithValue("@id", selectedUser.Id);
+                com.ExecuteNonQuery();
+                conn.Close();
+
+                clearTextboxes();
+                MessageBox.Show("A felhasználó adatainak módosítása sikeres!", "Sikeres művelet", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("A módosításhoz válassz ki felhasználót!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            var selectedUser = dgData.SelectedItem as User;
-            users.RemoveAt(dgData.SelectedIndex);
+            var selectedIndex = dgData.SelectedIndex;
 
-            MySqlConnection conn = GetMysqlConnection.getMysqlConnection();
-            conn.Open();
-            MySqlCommand com = new MySqlCommand($"DELETE FROM felhasznalok WHERE id=@id", conn);
-            com.Parameters.AddWithValue("@id", selectedUser.Id);
-            com.ExecuteNonQuery();
-            conn.Close();
+            if (selectedIndex >= 0)
+            {
+                var selectedUser = dgData.SelectedItem as User;
+                users.RemoveAt(dgData.SelectedIndex);
 
-            clearTextboxes();
+                MySqlConnection conn = GetMysqlConnection.getMysqlConnection();
+                conn.Open();
+                MySqlCommand com = new MySqlCommand($"DELETE FROM felhasznalok WHERE id=@id", conn);
+                com.Parameters.AddWithValue("@id", selectedUser.Id);
+                com.ExecuteNonQuery();
+                conn.Close();
+
+                clearTextboxes();
+                MessageBox.Show("A felhasználó törlése sikeres!", "Sikeres művelet", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("A törléshez válassz ki felhasználót!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void RegisterWindow_Closed(object sender, EventArgs e)

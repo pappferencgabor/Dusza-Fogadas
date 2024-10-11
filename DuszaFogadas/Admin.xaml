@@ -36,7 +36,8 @@
                   Margin="10"
                   SelectionChanged="dgData_SelectionChanged"
                   ColumnWidth="*"
-                  IsReadOnly="True"/>
+                  IsReadOnly="True"
+                  SelectionMode="Single"/>
 
         <StackPanel Grid.Row="1"
                     Grid.Column="3"

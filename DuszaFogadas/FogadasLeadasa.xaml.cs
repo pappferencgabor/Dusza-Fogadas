@@ -67,6 +67,8 @@ namespace DuszaFogadas
             conn.Close();
             cbGame.ItemsSource = games;
             cbGame.SelectedIndex = 0;
+
+            lblPoints.Content = user.Points.ToString();
         }
 
         private void cbGame_SelectionChanged(object sender, SelectionChangedEventArgs e)

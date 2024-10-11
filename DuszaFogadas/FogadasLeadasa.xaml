@@ -15,6 +15,27 @@
                Margin="10"
                HorizontalAlignment="Center" />
 
+        <StackPanel Width="350"
+                    Height="40"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Orientation="Horizontal"
+                    Margin="25">
+
+            <Label Content="Pontjaid száma:"
+                   FontSize="30"
+                   VerticalAlignment="Center"
+                   VerticalContentAlignment="Center"/>
+
+            <Label x:Name="lblPoints"
+                   Content="0"
+                   FontSize="30"
+                   VerticalAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   Foreground="CadetBlue"
+                   Margin="0 1 0 0"/>
+        </StackPanel>
+
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Margin="0 100 0 0">

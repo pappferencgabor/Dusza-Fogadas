@@ -42,11 +42,11 @@ namespace DuszaFogadas
            
         }
 
-        private void btnTeszt_Click(object sender, RoutedEventArgs e)
-        {
-            Admin window = new();
-            window.Show();
-        }
+        //private void btnTeszt_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Regisztracio window = new();
+        //    window.Show();
+        //}
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
