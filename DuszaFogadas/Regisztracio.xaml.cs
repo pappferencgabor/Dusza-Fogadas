@@ -60,7 +60,7 @@ namespace DuszaFogadas
                 errorMessage += "A jelszónak legalább 8 karakter hosszúnak kell lennie.\n";
             }
 
-            if (password.Contains(" "))
+            if (password.Contains(' '))
             {
                 errorMessage += "A jelszó nem tartalmazhat szóközt.\n";
             }

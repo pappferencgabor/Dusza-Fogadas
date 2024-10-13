@@ -113,15 +113,13 @@ namespace DuszaFogadas
                     com.ExecuteNonQuery();
                 }
 
-                MessageBox.Show("Jatek sikeresen felveve!", "Sikeres muvelet", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Játék sikeresen felvéve!", "Sikeres művelet", MessageBoxButton.OK, MessageBoxImage.Information);
                 conn.Close();
                 this.Close();
             } catch
             {
-                MessageBox.Show("Sikertelen a mentes", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Sikertelen a mentés!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            
-            
         }
     }
 }

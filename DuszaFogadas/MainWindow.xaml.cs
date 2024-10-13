@@ -44,7 +44,7 @@ namespace DuszaFogadas
 
         //private void btnTeszt_Click(object sender, RoutedEventArgs e)
         //{
-        //    Regisztracio window = new();
+        //    JatekLezarasa window = new();
         //    window.Show();
         //}
 
@@ -65,16 +65,15 @@ namespace DuszaFogadas
                     Menu menu = new Menu(usr);
                     menu.Show();
                     this.Close();
-                } else
-                {
-                    MessageBox.Show("Login failed");
+                } else {
+                    MessageBox.Show("Helytelen jelszó!", "Sikertelen bejelentkezés", MessageBoxButton.OK, MessageBoxImage.Warning);
                     conn.Close();
                 }
 
             }
             else
             {
-                MessageBox.Show("Login failed");
+                MessageBox.Show("Hibás felhasználónév!", "Sikertelen bejelentkezés", MessageBoxButton.OK, MessageBoxImage.Warning);
                 conn.Close();
             }
         }

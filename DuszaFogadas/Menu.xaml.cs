@@ -51,7 +51,11 @@ namespace DuszaFogadas
             sendBet.Show();
         }
 
-        // TODO close game
+        private void btnCloseGame_Click(object sender, RoutedEventArgs e)
+        {
+            JatekLezarasa jatekLezarasa = new JatekLezarasa();
+            jatekLezarasa.Show();
+        }
 
         private void btnManageUsers_Click(object sender, RoutedEventArgs e)
         {

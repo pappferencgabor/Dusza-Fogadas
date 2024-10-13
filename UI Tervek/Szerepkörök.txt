@@ -1,0 +1,13 @@
+Szervező
+- játék létrehozása
+- játék lezárása
+
+Admin
+- felhasználók kezelése
+- játékok kezelése
+
+Felhasználó
+- tippelések leadása
+
+Alany
+- ???

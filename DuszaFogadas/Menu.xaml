@@ -41,7 +41,8 @@
                     Height="50"
                     Content="Játék lezárása"
                     FontSize="35"
-                    Margin="30" />
+                    Margin="30"
+                    Click="btnCloseGame_Click" />
 
             <Button x:Name="btnManageUsers"
                     Width="350"

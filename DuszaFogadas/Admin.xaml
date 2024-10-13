@@ -37,7 +37,8 @@
                   SelectionChanged="dgData_SelectionChanged"
                   ColumnWidth="*"
                   IsReadOnly="True"
-                  SelectionMode="Single"/>
+                  SelectionMode="Single"
+                  Background="#CAF0F8"/>
 
         <StackPanel Grid.Row="1"
                     Grid.Column="3"

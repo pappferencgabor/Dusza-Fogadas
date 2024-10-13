@@ -16,6 +16,9 @@
     <Compile Update="JatekLetrehozasa.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="JatekLezarasa.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="JatekLetrehozasa.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="JatekLezarasa.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

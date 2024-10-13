@@ -83,16 +83,19 @@ namespace DuszaFogadas
             {
                 if (Convert.ToInt32(txtBet.Text) > user.Points)
                 {
-                    MessageBox.Show("Nincs ennyi pontod!", "Ponttullepes", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Nincs ennyi pontod!", "Ponttúllépés", MessageBoxButton.OK, MessageBoxImage.Error);
                     txtBet.Text = "0";
                 }
                 else if (Convert.ToInt32(txtBet.Text) < 0)
                 {
-                    MessageBox.Show("Nem lehet negativ a fogadas!", "Nullpont", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Nem lehet negatív a fogadás!", "Nullpont", MessageBoxButton.OK, MessageBoxImage.Error);
                     txtBet.Text = "0";
                 }
             }
-            
+            else
+            {
+                MessageBox.Show("Meg kell adnod tétet a fogadás végrehajtásához!", "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
 
@@ -122,7 +125,7 @@ namespace DuszaFogadas
             com.ExecuteNonQuery();
             conn.Close();
 
-            MessageBox.Show("Sikeresen feltette a tetet", "Tet feltetel", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Sikeresen feltette a tétet", "Tét feltétel", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
     }

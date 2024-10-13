@@ -1,0 +1,61 @@
+﻿<Window x:Class="DuszaFogadas.JatekLezarasa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DuszaFogadas"
+        mc:Ignorable="d"
+        Title="Fogadás | Játék Lezárása"
+        Height="720"
+        Width="1280"
+        Style="{StaticResource WindowStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.75*" />
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Label Content="Játék lezárása"
+               FontSize="78"
+               Margin="10"
+               HorizontalAlignment="Center" />
+
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Grid.Row="1">
+
+            <Label Content="Játék kiválasztása"
+                   FontSize="30" />
+            <ComboBox Width="300"
+                      Height="40"
+                      FontSize="24"
+                      VerticalContentAlignment="Center"
+                      Margin="0 0 0 50"
+                      ItemsSource="{Binding Path=Game}"
+                      DisplayMemberPath="GameName"
+                      SelectedValuePath="id"
+                      x:Name="cbGame" />
+
+            <Button x:Name="btnCloseGame"
+                    Width="250"
+                    Height="40"
+                    FontSize="24"
+                    Content="Játék lezárása" />
+        </StackPanel>
+
+        <Label Content="Eredmények"
+                FontSize="48"
+                Margin="10"
+                HorizontalAlignment="Center"
+                Grid.Row="2"/>
+
+        <ListBox Background="#CAF0F8"
+                 Foreground="#012A4A"
+                 Margin="10"
+                 FontSize="20"
+                 Grid.Row="3">
+        </ListBox>
+    </Grid>
+</Window>
