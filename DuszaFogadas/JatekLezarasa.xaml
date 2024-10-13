@@ -11,9 +11,12 @@
         Style="{StaticResource WindowStyle}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.25*"/>
-            <RowDefinition Height="0.2*" />
-            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -37,7 +40,7 @@
                       Height="40"
                       FontSize="24"
                       VerticalContentAlignment="Center"
-                      Margin="0 0 0 25"
+                      Margin="0 0 0 10"
                       ItemsSource="{Binding Path=Game}"
                       DisplayMemberPath="GameName"
                       SelectedValuePath="id"
@@ -49,7 +52,7 @@
                       Height="40"
                       FontSize="24"
                       VerticalContentAlignment="Center"
-                      Margin="0 0 0 25"
+                      Margin="0 0 0 10"
                       ItemsSource="{Binding Items}"
                       x:Name="cbEvent" />
 
@@ -60,17 +63,17 @@
                      Height="40"
                      FontSize="24"
                      VerticalContentAlignment="Center"
-                     Margin="0 0 0 50" />
+                     Margin="0 0 0 10" />
 
-            <Button x:Name="btnCloseGame"
+            <Button x:Name="btnSaveResult"
                     Width="250"
                     Height="40"
                     FontSize="24"
-                    Content="Játék lezárása" />
+                    Content="Esemény mentése" />
         </StackPanel>
 
         <Label Content="Eredmények"
-                FontSize="48"
+                FontSize="38"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Grid.Row="1"
@@ -83,5 +86,30 @@
                  Grid.Row="2"
                  Grid.Column="1">
         </ListBox>
+
+
+        <Label Content="Lezárt események"
+               FontSize="38"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Grid.Row="3"
+               Grid.ColumnSpan="2" />
+
+        <ListBox Background="#CAF0F8"
+                 Foreground="#012A4A"
+                 Margin="5"
+                 FontSize="20"
+                 Grid.Row="4"
+                 Grid.ColumnSpan="2">
+        </ListBox>
+
+
+        <Button x:Name="btnCloseGame"
+                Width="250"
+                Height="40"
+                FontSize="24"
+                Content="Játék lezárása"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
