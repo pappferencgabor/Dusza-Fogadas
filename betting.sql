@@ -23,6 +23,10 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+CREATE DATABASE betting;
+
+USE betting;
+
 --
 -- テーブルの構造 `alanyok`
 --
