@@ -53,7 +53,7 @@ namespace DuszaFogadas
 
         private void btnCloseGame_Click(object sender, RoutedEventArgs e)
         {
-            JatekLezarasa jatekLezarasa = new JatekLezarasa();
+            JatekLezarasa jatekLezarasa = new JatekLezarasa(usr);
             jatekLezarasa.Show();
         }
 

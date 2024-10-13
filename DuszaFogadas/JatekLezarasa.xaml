@@ -69,7 +69,8 @@
                     Width="250"
                     Height="40"
                     FontSize="24"
-                    Content="Esemény mentése" />
+                    Content="Esemény mentése"
+                    Click="btnSaveResult_Click"/>
         </StackPanel>
 
         <Label Content="Eredmények"
@@ -100,7 +101,8 @@
                  Margin="5"
                  FontSize="20"
                  Grid.Row="4"
-                 Grid.ColumnSpan="2">
+                 Grid.ColumnSpan="2"
+                 x:Name="lbClosedEvents">
         </ListBox>
 
 
@@ -110,6 +112,7 @@
                 FontSize="24"
                 Content="Játék lezárása"
                 Grid.Row="5"
-                Grid.ColumnSpan="2"/>
+                Grid.ColumnSpan="2"
+                Click="btnCloseGame_Cick"/>
     </Grid>
 </Window>
