@@ -17,11 +17,12 @@ Amennyiben a Visual Studio 2022 telepítve van, a mappában található `.sln` f
 A betting.sql tartalmaz egy előre elkészített DB-t, benne pár teszt adattal.
 
 Létezik két felhasználó, egy sima mezei felhasználó és egy admin, azoknak a következő a felhasználónév-jelszó párosa.
-tesztSima
-TesztSima22!
 
-tesztAdmin
-TesztAdmin22!
+- tesztSima
+- TesztSima22!
+
+- tesztAdmin
+- TesztAdmin22!
 
 ### Megjegyzés
 
